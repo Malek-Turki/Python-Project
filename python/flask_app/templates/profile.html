@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/48865f8dcb.js" crossorigin="anonymous"></script>
+
+    <title>OH! Doctors</title>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <!-- Navbar -->
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <img src="images/logo.jpg" href="#" alt="">
+                <a class="navbar-brand text-info" href="#"> OH! Doctors</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/doctor/dashboard">Home <span class="sr-only">(current)</span></a>
+                        </li>
+
+
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="/doctor/appointments">Appointments Management</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="/doctor/patients">Patients file management</a>
+                        </li>
+
+                    </ul>
+                    <div class="form-inline my-2 my-lg-0">
+
+                        <button class="btn btn-outline-info my-2 my-sm-0" type="submit"><i class="fa-solid fa-user"></i>
+                            Profile</button>
+                        <button class="btn btn-primary my-2 my-sm-0 ml-2" type="submit">Logout</button>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <!-- Navbar -->
+        <main>
+            <!-- Content Row -->
+            <div class="row">
+
+                <div class="col-xl-8 col-lg-6">
+
+                    <!-- Area Chart -->
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">Area Chart</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="chart-area">
+                                <canvas id="myAreaChart"></canvas>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Donut Chart -->
+                <div class="col-xl-4 col-lg-5">
+                    <div class="card shadow mb-4">
+                        <!-- Card Header - Dropdown -->
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">Donut Chart</h6>
+                        </div>
+                        <!-- Card Body -->
+                        <div class="row mt-2 ml-2">
+                            <div class="col-8">
+                                
+                                <img src="{{ image_data }}" class="rounded float-left" alt="profile picture"><br>
+                                <p class="text-secondary">Dr {{doctor.first_name}} {{doctor.last_name}}</p>
+                                <p class="text-secondary">Speciality: {{doctor.speciality}} </p>
+                                <p class="text-secondary">Address: {{doctor.address}} </p>
+                                <p class="text-secondary">Phone: {{doctor.phone}} </p>
+                                <p class="text-secondary">Email: {{doctor.email}} </p>
+                            </div>
+                            
+                        </div>
+
+                    </div>
+                    <a href="/doctor/edit/profile/{{doctor.id}}" class="btn btn-info">Edit Profile</a>
+                </div>
+            </div>
+        </main>
+        <footer class="text-center fixed-bottom">
+            <div class="container p-4 pb-0">
+                <!-- Section: Social media -->
+                <section class="mb-3">
+                    <!-- Facebook -->
+                    <a class="btn btn-outline-info btn-floating m-1" href="#!" role="button"><i
+                            class="fab fa-facebook-f"></i></a>
+
+                    <!-- Twitter -->
+                    <a class="btn btn-outline-info btn-floating m-1" href="#!" role="button"><i
+                            class="fab fa-twitter"></i></a>
+
+
+
+                    <!-- Instagram -->
+                    <a class="btn btn-outline-info btn-floating m-1" href="#!" role="button"><i
+                            class="fab fa-instagram"></i></a>
+
+                    <!-- Linkedin -->
+                    <a class="btn btn-outline-info btn-floating m-1" href="#!" role="button"><i
+                            class="fab fa-linkedin-in"></i></a>
+                </section>
+                <!-- Section: Social media -->
+            </div>
+            <!-- Grid container -->
+
+            <!-- Copyright -->
+            <div class="text-center p-3 text-light bg-info">
+                © 2023 Copyright
+                <a class="text-white" href=""> oh!doctors.com</a>
+            </div>
+            <!-- Copyright -->
+
+
+        </footer>
+
+    </div>
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="vendor/chart.js/Chart.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="js/demo/chart-area-demo.js"></script>
+    <script src="js/demo/chart-pie-demo.js"></script>
+    <script src="js/demo/chart-bar-demo.js"></script>
+
+</body>
+
+</html>

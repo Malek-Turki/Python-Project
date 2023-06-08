@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/48865f8dcb.js" crossorigin="anonymous"></script>
+
+    <title>OH! Doctors</title>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <!-- Navbar -->
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <a href="/oh!doctors"> <img src="{{ url_for('static', filename='images/logo.jpg') }}" class="card-img" alt="logo_picture"></a>
+                <a class="navbar-brand text-info" href="/oh!doctors"> OH! Doctors</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/doctor/dashboard">Home <span class="sr-only">(current)</span></a>
+                        </li>
+
+
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="/doctor/appointments">Appointment Management</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="/doctor/patients">Patients file management</a>
+                        </li>
+                        
+                    </ul>
+                    <div class="form-inline my-2 my-lg-0">
+                        
+                        <a href="/doctor/profile" class="btn btn-outline-info my-2 my-sm-0"><i class="fa-solid fa-user"></i>  Profile</a>
+                        <a href="/doctor/logout" class="btn btn-info my-2 my-sm-0 ml-2" > Logout</a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <!-- Navbar -->
+        <main>
+            <div class="row mt-5">
+                
+                <div class="col-6">
+                    <a href="/doctor/patients">
+                    <div class="card text-white">
+                        <img src="{{ url_for('static', filename='images/jeune-medecin-soutenant-son-patient.jpg') }}" class="card-img" alt="patients">
+                        <div class="card-img-overlay pt-5">
+                            <h2 class="card-title text-info">Patients</h2>
+                            
+                            <!-- <a href="/doctor/patients" class="btn btn-info">List Patients</a> -->
+                        </div>
+                    </div>
+                </a>
+                </div>
+
+                <div class="col-6">
+                    <a href="/doctor/nurses" >
+                    <div class="card text-white">
+                        <img src="{{ url_for('static', filename='images/docteur-cosmetologie-cabinet.jpg') }}" class="card-img" alt="assistant">
+                        <div class="card-img-overlay pt-5">
+                            <h2 class="card-title text-white">Assistant</h2>
+                            
+                            
+                        </div>
+                    </div>
+                </a>
+                </div>
+                
+
+
+
+            </div>
+
+            <div class="row mt-5">
+                
+                <div class="col-6">
+                    <a href="/doctor/appointments">
+                    <div class="card text-white">
+                        <img src="{{ url_for('static', filename='images/calendrier-planificateur-vue-dessus-plante-succulente.jpg') }}" class="card-img" alt="calender">
+                        
+                        <div class="card-img-overlay pt-5">
+                            <h2 class="card-title text-info mb-5">Calendar</h2>
+                            
+                            
+                        </div>
+                    </div>
+                </a>
+                </div>
+
+                <div class="col-6">
+                    <a href="/doctor/payment">
+                    <div class="card text-white">
+                        <img src="{{ url_for('static', filename='images/femme-achats-credit-gestionnaire-smartphone.jpg') }}" class="card-img" alt="payment">
+                        <div class="card-img-overlay pt-5">
+                            <h2 class="card-title mb-5">Payment</h2>
+                            
+                            
+                        </div>
+                    </div>
+                </a>
+                </div>
+
+
+            </div>
+        </main>
+
+        <footer class="text-center fixed-bottom">
+            <div class="container p-4 pb-0">
+                <!-- Section: Social media -->
+                <section class="mb-3">
+                    <!-- Facebook -->
+                    <a class="btn btn-outline-info btn-floating m-1" href="#!" role="button"><i
+                            class="fab fa-facebook-f"></i></a>
+
+                    <!-- Twitter -->
+                    <a class="btn btn-outline-info btn-floating m-1" href="#!" role="button"><i
+                            class="fab fa-twitter"></i></a>
+
+                    
+
+                    <!-- Instagram -->
+                    <a class="btn btn-outline-info btn-floating m-1" href="#!" role="button"><i
+                            class="fab fa-instagram"></i></a>
+
+                    <!-- Linkedin -->
+                    <a class="btn btn-outline-info btn-floating m-1" href="#!" role="button"><i
+                            class="fab fa-linkedin-in"></i></a>
+                </section>
+                <!-- Section: Social media -->
+            </div>
+            <!-- Grid container -->
+
+            <!-- Copyright -->
+            <div class="text-center p-3 text-light bg-info">
+                © 2023 Copyright
+                <a class="text-white" href="/oh!doctors"> oh!doctors.com</a>
+            </div>
+            <!-- Copyright -->
+
+
+        </footer>
+
+    </div>
+    
+</body>
+
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/48865f8dcb.js" crossorigin="anonymous"></script>
+
+    <title>OH! Doctors</title>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <!-- Navbar -->
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <img src="images/logo.jpg" href="/oh!doctors" alt="logo_picture">
+                <a class="navbar-brand text-info" href="/oh!doctors"> OH! Doctors</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/doctors/dashboard">Home <span class="sr-only">(current)</span></a>
+                        </li>
+
+
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="/doctor/appointments">Appointment Management</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="/doctor/patients">Patients file management</a>
+                        </li>
+
+                    </ul>
+                    <div class="form-inline my-2 my-lg-0">
+
+                        <a href="/doctor/profil" class="btn btn-outline-info my-2 my-sm-0"><i
+                                class="fa-solid fa-user"></i> Profile</a>
+                        <a href="/doctor/logout" class="btn btn-info my-2 my-sm-0 ml-2"> Logout</a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <!-- Navbar -->
+        <main class="mt-5 row d-flex justify-content-center">
+            <form action="/patient/consultation/create" method="post" class="col-8">
+                <div class="row">
+                    
+                        
+                            <h3  class="text-info"> Patient name: {{patient.first_name}}  {{patient.last_name}}</h3>
+                           
+                            
+                        
+
+                  
+                   
+                </div>
+                <div class="form-group row">
+                    <label class="col-form-label">Symptoms</label>
+                    <textarea type="text" name="symptoms" class="form-control"> </textarea>
+                    {%for message in get_flashed_messages(category_filter=["symptoms"])%}
+                    <p class="text-danger">{{message}}</p>
+                    {%endfor%}
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-form-label">Chronic Disease</label>
+                    <textarea type="text" name="analysis" class="form-control"> </textarea>
+                    
+                   
+                   
+                </div>
+
+
+                <div class="form-group row">
+                    <label class="col-form-label">Conclusion</label>
+                    <textarea type="text" name="conclusion" class="form-control"> </textarea>
+                    {%for message in get_flashed_messages(category_filter=["conclusion"])%}
+                    <p class="text-danger">{{message}}</p>
+                    {%endfor%}
+                </div>
+
+                <input type="hidden" name="patient_id" value="{{patient.id}}">
+                <button class="btn btn-info">Save</button>
+            </form>
+
+        </main>
+        <footer class="text-center fixed-bottom">
+            <div class="container p-4 pb-0">
+                <!-- Section: Social media -->
+                <section class="mb-3">
+                    <!-- Facebook -->
+                    <a class="btn btn-outline-info btn-floating m-1" href="#!" role="button"><i
+                            class="fab fa-facebook-f"></i></a>
+
+                    <!-- Twitter -->
+                    <a class="btn btn-outline-info btn-floating m-1" href="#!" role="button"><i
+                            class="fab fa-twitter"></i></a>
+
+
+
+                    <!-- Instagram -->
+                    <a class="btn btn-outline-info btn-floating m-1" href="#!" role="button"><i
+                            class="fab fa-instagram"></i></a>
+
+                    <!-- Linkedin -->
+                    <a class="btn btn-outline-info btn-floating m-1" href="#!" role="button"><i
+                            class="fab fa-linkedin-in"></i></a>
+                </section>
+                <!-- Section: Social media -->
+            </div>
+            <!-- Grid container -->
+
+            <!-- Copyright -->
+            <div class="text-center p-3 text-light bg-info">
+                © 2023 Copyright
+                <a class="text-white" href=""> ohdoctors.com</a>
+            </div>
+            <!-- Copyright -->
+
+
+        </footer>
+
+    </div>
+
+</body>
+
+</html>
